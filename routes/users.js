@@ -7,7 +7,7 @@ var jwt = require('jsonwebtoken');
 var utils = require('../utils/index');
 var email = require('../utils/email');
 var expressJwt = require('express-jwt');
-
+process.env.JWT_SECRET="hello";
 if (!process.env.JWT_SECRET) {
   console.error('ERROR!: Please set JWT_SECRET before running the app. \n run: export JWT_SECRET=<some secret string> to set JWTSecret. ')
   process.exit();

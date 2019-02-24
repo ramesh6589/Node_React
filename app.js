@@ -49,7 +49,7 @@ app.use(cookieParser());
 
 //middleware that checks if JWT token exists and verifies it if it does exist.
 //In all the future routes, this helps to know if the request is authenticated or not.
-app.use(function(req, res, next) {
+/*app.use(function(req, res, next) {
   // check header or url parameters or post parameters for token
   var token = req.headers['authorization'];
   if (!token) return next();
@@ -69,7 +69,7 @@ app.use(function(req, res, next) {
     }
   });
 
-});
+});*/
 
 
 app.use('/api/', posts);
@@ -118,7 +118,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/posts');
+mongoose.connect('mongodb://localhost:27017/posts');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {

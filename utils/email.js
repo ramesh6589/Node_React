@@ -1,4 +1,5 @@
-
+process.env.FROM_EMAIL="ramesh6589@gmail.com"
+process.env.POSTMARK_API_TOKEN="bla-bla-bla-9619-a6d1185548cd";
 if (!process.env.FROM_EMAIL) {
   console.log('Please set: FROM_EMAIL environment variable. This is a validated email address to send emails from to other users for email verification, reset pwd etc')
   process.exit();
